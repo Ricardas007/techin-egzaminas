@@ -1,6 +1,5 @@
 package lt.techin.egzaminas.calkuliatorius;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,10 +22,8 @@ public class CalculatorSearch extends BasePage{
         navigateToTaskPage.click();
     }
 
-    public void findProjects() {
-        for (WebElement webElement : getFirstProject) {
-                webElement.isDisplayed();
-        }
+    public int findProjects() {
+        return getFirstProject.size();
     }
 }
 
