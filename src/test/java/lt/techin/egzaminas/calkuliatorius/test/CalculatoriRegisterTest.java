@@ -11,7 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class CalculatoriusRegisterTest extends BaseTest{
+public class CalculatoriRegisterTest extends BaseTest{
 
     CalculatorRegister register;
     CalculatorLogin login;

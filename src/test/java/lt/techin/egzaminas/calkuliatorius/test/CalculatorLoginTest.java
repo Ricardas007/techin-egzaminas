@@ -10,7 +10,7 @@ import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 
-public class CalculatoriusLoginTest extends BaseTest {
+public class CalculatorLoginTest extends BaseTest {
 
     CalculatorRegister register;
     CalculatorLogin login;
