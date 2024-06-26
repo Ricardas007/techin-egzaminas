@@ -27,7 +27,6 @@ public class CalculatorCreateNewInputTest extends BaseTest{
         String name = arguments.getString(0);
         String password = arguments.getString(1);
 
-
         register = new CalculatorRegister(driver);
         login = new CalculatorLogin(driver);
         login.enterUserNameField(name);
