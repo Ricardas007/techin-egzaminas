@@ -14,16 +14,23 @@ public class CalculatorSearch extends BasePage{
     @FindBy(css = "tr")
     List<WebElement> getFirstProject;
 
+    @FindBy (css = "tr:nth-of-type(2) ")
+    WebElement firstCalculation;
+
     public CalculatorSearch(WebDriver driver) {
         super(driver);
     }
 
-    public void navigateToSavedTasks() {
+    public void navigateToSavedCalculations() {
         navigateToTaskPage.click();
     }
 
-    public int findProjects() {
-        return getFirstProject.size();
+    public boolean isFirstCalculationIsDisplayed() {
+      return firstCalculation.isDisplayed();
+    }
+
+    public int countAllCalculations() {
+        return (getFirstProject.size() -1);
     }
 }
 

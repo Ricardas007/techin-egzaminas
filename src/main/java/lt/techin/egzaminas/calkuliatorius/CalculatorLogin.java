@@ -29,7 +29,7 @@ public class CalculatorLogin extends BasePage {
         inputLoginName.sendKeys(name);
     }
 
-    public void enterUserPassworField(String password) {
+    public void enterPassworField(String password) {
         inputLoginPassword.sendKeys(password);
     }
 

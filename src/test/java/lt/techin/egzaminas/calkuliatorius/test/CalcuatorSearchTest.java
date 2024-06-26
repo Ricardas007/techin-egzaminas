@@ -4,6 +4,7 @@ import jdk.jfr.Description;
 import lt.techin.egzaminas.calkuliatorius.CalculatorLogin;
 import lt.techin.egzaminas.calkuliatorius.CalculatorRegister;
 import lt.techin.egzaminas.calkuliatorius.CalculatorSearch;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -27,12 +28,13 @@ public class CalcuatorSearchTest extends BaseTest{
         register = new CalculatorRegister(driver);
         login = new CalculatorLogin(driver);
         login.enterUserNameField(name);
-        login.enterUserPassworField(password);
+        login.enterPassworField(password);
         login.pressPrisijungtiButton();
         search = new CalculatorSearch(driver);
-        search.navigateToSavedTasks();
-        String numbers = String.valueOf(search.findProjects());
-        System.out.println(numbers);
+        search.navigateToSavedCalculations();
+        String numbers = String.valueOf(search.countAllCalculations());
+        boolean isFirstCalculationPresent = search.isFirstCalculationIsDisplayed();
+        Assertions.assertTrue(isFirstCalculationPresent, "At least one task should be in task list");
 
 
     }

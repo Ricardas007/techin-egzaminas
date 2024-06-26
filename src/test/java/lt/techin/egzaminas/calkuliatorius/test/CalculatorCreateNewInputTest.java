@@ -30,7 +30,7 @@ public class CalculatorCreateNewInputTest extends BaseTest{
         register = new CalculatorRegister(driver);
         login = new CalculatorLogin(driver);
         login.enterUserNameField(name);
-        login.enterUserPassworField(password);
+        login.enterPassworField(password);
         login.pressPrisijungtiButton();
         int number1 = arguments.getByte(2);
         int number2 = arguments.getByte(3);
@@ -58,7 +58,7 @@ public class CalculatorCreateNewInputTest extends BaseTest{
         register = new CalculatorRegister(driver);
         login = new CalculatorLogin(driver);
         login.enterUserNameField(name);
-        login.enterUserPassworField(password);
+        login.enterPassworField(password);
         login.pressPrisijungtiButton();
         int number1 = arguments.getByte(2);
         int number2 = arguments.getByte(3);

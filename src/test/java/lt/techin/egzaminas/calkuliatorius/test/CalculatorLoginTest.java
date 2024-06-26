@@ -27,23 +27,24 @@ public class CalculatorLoginTest extends BaseTest {
         register = new CalculatorRegister(driver);
         login = new CalculatorLogin(driver);
         login.enterUserNameField(name);
-        login.enterUserPassworField(password);
+        login.enterPassworField(password);
         login.pressPrisijungtiButton();
         login.getLogoutButtonText();
         String logoutText = login.getLogoutButtonText();
         Assertions.assertEquals(name, logoutText,"Entered name should match with logged in user name.");
     }
+
     @Tag("Negatvive")
     @Description("User leaves name field empty enters password should not login to page, and error message should appear")
     @ParameterizedTest(name = "Test {index} => name {0}, password {1}")
     @CsvFileSource(files = "src/main/resources/loginData.csv", numLinesToSkip = 1)
-    public void userLoginToPageNotEnteringUserName(ArgumentsAccessor arguments) { //istrinti
+    public void userLoginToPageNotEnteringUserName(ArgumentsAccessor arguments) {
 
         String password = arguments.getString(1);
 
         register = new CalculatorRegister(driver);
         login = new CalculatorLogin(driver);
-        login.enterUserPassworField(password);
+        login.enterPassworField(password);
         login.pressPrisijungtiButton();
         boolean isErrorTextPresent = login.isErrorTextPresentOnLoginPage();
         Assertions.assertTrue(isErrorTextPresent, "When user enters/leaves incorrect or empty field, error message is present");
