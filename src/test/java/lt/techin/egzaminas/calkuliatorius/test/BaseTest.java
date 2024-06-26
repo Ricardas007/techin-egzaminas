@@ -12,9 +12,8 @@ public class BaseTest {
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
-        driver.get("https://testpages.eviltester.com/styled/calculator");
+        driver.get("http://localhost:8080/prisijungti");
         driver.manage().window().maximize();
-
     }
 
     @AfterEach
